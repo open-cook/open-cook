@@ -1,11 +1,11 @@
 .users_cabinet
-  %h3 Cabinet of: #{@user.login}
+  %h3 Cabinet of: #{current_user.login}
 
   %h4 Посты
 
   %p= link_to 'Новый Пост', new_post_url
-  %p= link_to 'Моя Лента',  user_posts_url(@user)
-  %p= link_to 'Управлять лентой',  manage_user_posts_url(@user)
+  %p= link_to 'Моя Лента',  user_posts_url(current_user)
+  %p= link_to 'Управлять лентой',  manage_user_posts_url(current_user)
 
   %h4 Структура
 
@@ -14,7 +14,7 @@
 
   %h4 Комментарии
 
-  %p= link_to "My comments #{@user.my_comments_count}", [:my, :comments]
-  %p= link_to "Incoming comments #{@user.comcoms_sum}", [:incoming, :comments]
-  %p= link_to "New comments #{@user.draft_comcoms_count}", [:new, :comment]
-  %p= link_to "Deleted comments #{@user.deleted_comcoms_count}", [:trash, :comments]
+  %p= link_to "My comments #{current_user.my_comments_count}", [:my, :comments]
+  %p= link_to "Incoming comments #{current_user.comcoms_sum}", [:incoming, :comments]
+  %p= link_to "New comments #{current_user.draft_comcoms_count}", [:new, :comment]
+  %p= link_to "Deleted comments #{current_user.deleted_comcoms_count}", [:trash, :comments]

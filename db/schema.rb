@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 20130510182558) do
     t.datetime "updated_at"
   end
 
-  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
 
   create_table "hubs", force: true do |t|
     t.integer  "user_id"
@@ -256,7 +256,7 @@ ActiveRecord::Schema.define(version: 20130510182558) do
     t.integer  "storage_files_size",              default: 0
   end
 
-  add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
+  add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token"
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token"
 
 end
