@@ -18,21 +18,27 @@
             = render partial: "layouts/items/header"
             = render partial: "layouts/items/sections"
         .row
-          .col-md-3
-            = render partial: "layouts/widgets/express_nav"
-            = yield :hubs_widget
+          -if content_for?(:the_audit_main)
+            .col-md-12
+              = render partial: 'the_notification/flash'
+              = yield
+              = yield :the_audit_main
+          -else
+            .col-md-3
+              = render partial: "layouts/widgets/express_nav"
+              = yield :hubs_widget
 
-            = yield :role_sidebar
-            = yield :comments_sidebar
-            = yield :recent_comments_widget
+              = yield :role_sidebar
+              = yield :comments_sidebar
+              = yield :recent_comments_widget
 
-            = yield :tags_widget
-            = yield :tag_search_widget
-          .col-md-9
-            = render partial: 'the_notification/flash'
-            = yield
-            = yield :role_main
-            = yield :comments_main
+              = yield :tags_widget
+              = yield :tag_search_widget
+            .col-md-9
+              = render partial: 'the_notification/flash'
+              = yield
+              = yield :role_main
+              = yield :comments_main
       .fguard
     .footer.container
       .row

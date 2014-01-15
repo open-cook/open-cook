@@ -81,9 +81,9 @@ gem "the_notification",
   branch: 'master'
 
 gem 'the_audit',
-  #, path: '../the_audit'
-  github: 'open-cook/the_audit',
-  branch: 'master'
+  path: '../the_audit'
+  # github: 'open-cook/the_audit',
+  # branch: 'master'
 
 group :development, :test do
   gem 'colored'

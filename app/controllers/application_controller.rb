@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
   end
 
   def save_audit
-    (@audit || Audit.new.init(self)).save
+    (@audit || Audit.new.init(self)).save unless controller_name == 'audits'
   end
 
   def not_authenticated
