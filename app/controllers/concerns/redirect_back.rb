@@ -8,7 +8,7 @@ module RedirectBack
       redirect_to default_path, opts
     end
 
-    def redirect_back notice = {}
+    def redirect_back(notice = {})
       redirect_back_or '/', notice
     end
   end
